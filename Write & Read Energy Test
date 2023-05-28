@@ -1,4 +1,4 @@
-"""Script to WRITE various write centers and range to chip, then READ energy"""
+"""Script to WRITE various write centers and range to chip, then READ energy. (So only 1bpc & 1 level) """
 import argparse, time
 from ember import EMBERDriver
 
