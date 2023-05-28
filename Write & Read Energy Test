@@ -23,11 +23,15 @@ with EMBERDriver(args.chipname, args.config) as ember, open(args.outfile, "a") a
 
     # Read directly after write
     read = ember.read()
+    
+    # Read energy directly after write
+    read_energy = ember.read_energy()
 
     # Print address and read value
     print("Address", addr)
     print("WROTE", write_array)
     print("READ", read)
+    print("READ Energy", read_energy)
 
     # Write to outfile
     outfile.write(str(addr))
@@ -42,10 +46,12 @@ with EMBERDriver(args.chipname, args.config) as ember, open(args.outfile, "a") a
     # Set address and read
     ember.set_addr(addr)
     read = ember.read()
+    read_energy = ember.read_energy()
 
     # Print address and read value
     print("Address", addr)
     print("READ", read)
+    print("READ Energy", read_energy)
 
     # Write to outfile
     outfile.write(str(addr))
